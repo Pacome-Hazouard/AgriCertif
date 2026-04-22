@@ -707,9 +707,9 @@ function HomeScreen({ onSelect }) {
                     </div>
                     <div style={{ flex: 1, overflowY: "hidden", padding: "10px 10px", display: "flex", flexDirection: "column", gap: 7 }}>
                       {[
-                        { name: "John Deere 6530p", info: "2008 · 6 530 h", score: 87, scoreColor: COLORS.primary, img: "/tractor-jd6530p.png" },
-                        { name: "John Deere 6115 M", info: "2015 · 3 200 h", score: 92, scoreColor: "#4C7F05", img: "/tractor-jd6115m-2015.png" },
-                        { name: "John Deere 6210 R", info: "2013 · 5 100 h", score: 74, scoreColor: "#E8A838", img: "/tractor-jd6210r-2013.png" },
+                        { name: "John Deere 6530p", info: "2008 · 6 530 h", score: 87, scoreColor: COLORS.primary, img: "./tractor-jd6530p.png" },
+                        { name: "John Deere 6115 M", info: "2015 · 3 200 h", score: 92, scoreColor: "#4C7F05", img: "./tractor-jd6115m-2015.png" },
+                        { name: "John Deere 6210 R", info: "2013 · 5 100 h", score: 74, scoreColor: "#E8A838", img: "./tractor-jd6210r-2013.png" },
                       ].map(({ name, info, score, scoreColor, img }) => (
                         <div key={name} style={{ background: "white", borderRadius: 10, border: "1px solid #E8F0E0", padding: "8px 10px", display: "flex", alignItems: "center", gap: 8, boxShadow: "0 2px 6px rgba(16,68,16,0.05)" }}>
                           <div style={{ width: 36, height: 36, borderRadius: 10, background: "#EBF4E1", overflow: "hidden", flexShrink: 0 }}>
