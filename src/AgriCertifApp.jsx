@@ -416,7 +416,7 @@ function HomeScreen({ onSelect }) {
         <div className="hero-fade-2" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 16, marginBottom: 26 }}>
           <div style={{ width: 40, height: 1, background: COLORS.primaryLight, opacity: 0.5 }} />
           <span style={{ fontSize: 13, fontWeight: 600, letterSpacing: 2, textTransform: "uppercase", color: COLORS.primary, opacity: 0.8 }}>
-            Pour les directions et les équipes commerciales
+            L'outil pensé pour les pros du matériel agricole
           </span>
           <div style={{ width: 40, height: 1, background: COLORS.primaryLight, opacity: 0.5 }} />
         </div>
@@ -427,7 +427,7 @@ function HomeScreen({ onSelect }) {
           color: COLORS.primaryDark, marginBottom: 24,
         }}>
           Certifiez chaque matériel.<br />
-          <span style={{ color: COLORS.primary }}>Vendez mieux, ensemble.</span>
+          <span style={{ color: COLORS.primary }}>Vendez mieux. Chaque fois.</span>
         </h1>
 
         <p className="hero-fade-4" style={{ fontSize: 17, color: COLORS.muted, maxWidth: 560, margin: "0 auto 48px", lineHeight: 1.7, fontWeight: 400, opacity: 0.8 }}>
@@ -557,7 +557,7 @@ function HomeScreen({ onSelect }) {
             <div style={{ background: COLORS.primaryDark, borderRadius: 24, padding: "40px 48px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 32, textAlign: "center" }}>
               {[
                 { val: "< 10 min", label: "pour un dossier complet et publié" },
-                { val: "3×", label: "plus de contacts qualifiés" },
+                { val: "×5", label: "plus de contacts qualifiés" },
                 { val: "35%", label: "de durée de vente en moins" },
                 { val: "100%", label: "du parc au même standard de qualité" },
               ].map(({ val, label }) => (
@@ -1681,7 +1681,7 @@ function CertifyScreen({ onSelect }) {
         </button>
         <div style={{ maxWidth: 620, margin: "0 auto" }}>
           <div style={{ marginBottom: 28, display: "flex", justifyContent: "center" }}>
-            <img loading="eager" src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 48, display: "block" }} />
+            <img loading="eager" src="./logo-agricertif.svg" alt="AgriCertif" onClick={() => onSelect("home")} style={{ height: 48, display: "block", cursor: "pointer" }} />
           </div>
           <h1 style={{ fontSize: "clamp(36px, 4.5vw, 58px)", fontWeight: 900, color: COLORS.primaryDark, letterSpacing: -2, lineHeight: 1.04, marginBottom: 20 }}>
             Certifiez votre<br />matériel agricole
