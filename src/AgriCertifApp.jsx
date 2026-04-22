@@ -616,9 +616,9 @@ function HomeScreen({ onSelect }) {
 
             {/* Logo AgriCorner — where the listing goes */}
             <a href="https://www.agri-corner.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 14, background: "white", border: "1px solid #D5E8C0", borderRadius: 14, padding: "12px 24px 12px 20px", marginBottom: 28, width: "fit-content", cursor: "pointer", transition: "box-shadow 0.2s", boxShadow: "0 2px 8px rgba(16,68,16,0.06)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, background: "white", border: "1px solid #D5E8C0", borderRadius: 14, padding: "10px 16px", marginBottom: 28, width: "fit-content", cursor: "pointer", transition: "box-shadow 0.2s", boxShadow: "0 2px 8px rgba(16,68,16,0.06)" }}>
                 <span style={{ fontSize: 11, color: COLORS.muted, fontWeight: 500 }}>Annonce publiée sur</span>
-                <img loading="eager" src="./logo-agricorner-new.png" alt="AgriCorner" style={{ height: 38 }} />
+                <img loading="eager" src="./logo-agricorner-new.png" alt="AgriCorner" style={{ width: 150, height: "auto" }} />
               </div>
             </a>
 
