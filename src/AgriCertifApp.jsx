@@ -126,7 +126,7 @@ function Header({ view, onHome }) {
 
         {/* AgriCertif centré sur CertifyScreen */}
         {isCertify && (
-          <img src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 36 }} />
+          <img loading="eager" src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 36 }} />
         )}
 
         {/* Bouton Accueil — à droite en absolu sur CertifyScreen */}
@@ -151,9 +151,15 @@ function useReveal() {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    // Si l'élément est déjà dans le viewport au montage, on le rend visible immédiatement
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add("visible");
+      return;
+    }
     const obs = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) { el.classList.add("visible"); obs.disconnect(); } },
-      { threshold: 0.12 }
+      { threshold: 0 }
     );
     obs.observe(el);
     return () => obs.disconnect();
@@ -270,7 +276,7 @@ function HomeScreen({ onSelect }) {
 
       {/* ══ NAVBAR ══ */}
       <nav style={{ position: "sticky", top: 0, zIndex: 100, background: "rgba(248,246,240,0.92)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", borderBottom: "1px solid #E0DDD4", padding: "0 28px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 56 }}>
-        <img src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 28 }} />
+        <img loading="eager" src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 28 }} />
         <button
           onClick={() => { setAuthOpen(true); setAuthMode("login"); }}
           style={{ background: COLORS.primaryDark, color: "white", border: "none", borderRadius: 22, padding: "8px 20px", fontSize: 13, fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", gap: 8 }}
@@ -295,7 +301,7 @@ function HomeScreen({ onSelect }) {
 
             {/* Logo */}
             <div style={{ textAlign: "center", marginBottom: 20 }}>
-              <img src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 36, marginBottom: 8 }} />
+              <img loading="eager" src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 36, marginBottom: 8 }} />
               <div style={{ fontSize: 13, color: COLORS.muted }}>
                 {authMode === "login" && "Connexion à votre espace"}
                 {authMode === "register" && "Créer votre compte"}
@@ -397,11 +403,11 @@ function HomeScreen({ onSelect }) {
 
         {/* Logo + by AgriCorner */}
         <div className="hero-fade-1" style={{ display: "flex", flexDirection: "column", alignItems: "center", marginBottom: 20, gap: 0 }}>
-          <img src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 92 }} />
+          <img loading="eager" src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 92 }} />
           <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: -16 }}>
             <span style={{ fontSize: 11, color: COLORS.muted, fontWeight: 500, opacity: 0.7 }}>by</span>
             <a href="https://www.agri-corner.com" target="_blank" rel="noopener noreferrer">
-              <img src="./logo-agricorner-new.png" alt="AgriCorner" style={{ height: 72, opacity: 0.85, cursor: "pointer" }} />
+              <img loading="eager" src="./logo-agricorner-new.png" alt="AgriCorner" style={{ height: 72, opacity: 0.85, cursor: "pointer" }} />
             </a>
           </div>
         </div>
@@ -578,7 +584,7 @@ function HomeScreen({ onSelect }) {
               </div>
               <div>
                 <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: "uppercase", color: COLORS.primary }}>L'application</div>
-                <img src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 18, display: "block", marginTop: 2 }} />
+                <img loading="eager" src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 18, display: "block", marginTop: 2 }} />
               </div>
             </div>
 
@@ -612,7 +618,7 @@ function HomeScreen({ onSelect }) {
             <a href="https://www.agri-corner.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10, background: "white", border: "1px solid #D5E8C0", borderRadius: 14, padding: "10px 16px", marginBottom: 28, width: "fit-content", cursor: "pointer", transition: "box-shadow 0.2s", boxShadow: "0 2px 8px rgba(16,68,16,0.06)" }}>
                 <span style={{ fontSize: 11, color: COLORS.muted, fontWeight: 500 }}>Annonce publiée sur</span>
-                <img src="./logo-agricorner-new.png" alt="AgriCorner" style={{ height: 28 }} />
+                <img loading="eager" src="./logo-agricorner-new.png" alt="AgriCorner" style={{ height: 28 }} />
               </div>
             </a>
 
@@ -757,7 +763,7 @@ function HomeScreen({ onSelect }) {
                   <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "50%", background: "linear-gradient(to bottom, rgba(255,255,255,0.03) 0%, transparent 100%)" }} />
                   {/* Logo AgriCertif centré */}
                   <div style={{ position: "absolute", bottom: 48, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
-                    <img src="./logo-agricertif.svg" alt="" style={{ height: 22, opacity: 0.10, filter: "brightness(10)" }} />
+                    <img loading="eager" src="./logo-agricertif.svg" alt="" style={{ height: 22, opacity: 0.10, filter: "brightness(10)" }} />
                   </div>
 
                 </div>
@@ -992,7 +998,7 @@ function HomeScreen({ onSelect }) {
                     </div>
                     {/* AgriCorner header */}
                     <div style={{ padding: "4px 12px 8px", background: "white", borderBottom: "1px solid #EEE", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                      <img src="./logo-agricorner-new.png" alt="AgriCorner" style={{ height: 30, maxWidth: 110, objectFit: "contain" }} />
+                      <img loading="eager" src="./logo-agricorner-new.png" alt="AgriCorner" style={{ height: 30, maxWidth: 110, objectFit: "contain" }} />
                       <div style={{ fontSize: 7, color: "#888" }}>Mon annonce</div>
                     </div>
                     {/* Photo machine */}
@@ -1005,7 +1011,7 @@ function HomeScreen({ onSelect }) {
                       </div>
                       {/* Logo AgriCertif bas droite — vraies couleurs sur fond blanc semi-transparent */}
                       <div style={{ position: "absolute", bottom: 7, right: 7, background: "rgba(255,255,255,0.92)", backdropFilter: "blur(6px)", borderRadius: 6, padding: "2px 7px" }}>
-                        <img src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 12, display: "block" }} />
+                        <img loading="eager" src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 12, display: "block" }} />
                       </div>
                     </div>
                     {/* Infos annonce */}
@@ -1094,7 +1100,7 @@ function HomeScreen({ onSelect }) {
         <div style={{ position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", width: "100%", height: 1, background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent)" }} />
         <div style={{ position: "absolute", top: -300, left: "50%", transform: "translateX(-50%)", width: 700, height: 700, borderRadius: "50%", background: `radial-gradient(circle, ${COLORS.primaryLight}18 0%, transparent 70%)`, pointerEvents: "none" }} />
         <RevealBlock>
-          <img src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 56, marginBottom: 36, filter: "brightness(0) invert(1)", opacity: 0.88 }} />
+          <img loading="eager" src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 56, marginBottom: 36, filter: "brightness(0) invert(1)", opacity: 0.88 }} />
           <h2 style={{ fontSize: "clamp(32px, 4.5vw, 58px)", fontWeight: 900, color: "white", letterSpacing: -1.8, marginBottom: 20, lineHeight: 1.05 }}>
             Votre concession mérite<br />mieux que l'aléatoire.
           </h2>
@@ -1117,7 +1123,7 @@ function HomeScreen({ onSelect }) {
       <footer style={{ background: "#081E08", borderTop: "1px solid rgba(255,255,255,0.07)", padding: "32px 48px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 20 }}>
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            <img src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 26, filter: "brightness(0) invert(1)", opacity: 0.75 }} />
+            <img loading="eager" src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 26, filter: "brightness(0) invert(1)", opacity: 0.75 }} />
             <span style={{ fontSize: 11, color: "rgba(255,255,255,0.30)" }}>© 2025 AgriCertif · Un service AgriCorner</span>
           </div>
           <nav style={{ display: "flex", gap: 28, flexWrap: "wrap", alignItems: "center" }}>
@@ -1164,7 +1170,7 @@ function HomeScreen({ onSelect }) {
             >✕</button>
 
             {/* Logo */}
-            <img src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 52, marginBottom: 10 }} />
+            <img loading="eager" src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 52, marginBottom: 10 }} />
             <div style={{ fontSize: 11, color: "#AAA", fontWeight: 600, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 20 }}>
               par AgriCorner
             </div>
@@ -1675,7 +1681,7 @@ function CertifyScreen({ onSelect }) {
         </button>
         <div style={{ maxWidth: 620, margin: "0 auto" }}>
           <div style={{ marginBottom: 28, display: "flex", justifyContent: "center" }}>
-            <img src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 48, display: "block" }} />
+            <img loading="eager" src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 48, display: "block" }} />
           </div>
           <h1 style={{ fontSize: "clamp(36px, 4.5vw, 58px)", fontWeight: 900, color: COLORS.primaryDark, letterSpacing: -2, lineHeight: 1.04, marginBottom: 20 }}>
             Certifiez votre<br />matériel agricole
@@ -1957,7 +1963,7 @@ function CertifyScreen({ onSelect }) {
 
       {/* ══ CTA FINAL ══ */}
       <section style={{ background: COLORS.primaryDark, padding: "88px 24px", textAlign: "center" }}>
-        <img src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 50, marginBottom: 30, filter: "brightness(0) invert(1)", opacity: 0.88 }} />
+        <img loading="eager" src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 50, marginBottom: 30, filter: "brightness(0) invert(1)", opacity: 0.88 }} />
         <h2 style={{ fontSize: "clamp(28px, 3.5vw, 48px)", fontWeight: 900, color: "white", letterSpacing: -1.4, marginBottom: 16, lineHeight: 1.08 }}>
           Prêt à commencer ?
         </h2>
@@ -1987,7 +1993,7 @@ function CertifyScreen({ onSelect }) {
         >
           <div onClick={e => e.stopPropagation()} style={{ background: "white", borderRadius: 28, padding: "48px 40px", maxWidth: 460, width: "100%", textAlign: "center", boxShadow: "0 48px 100px rgba(0,0,0,0.35)", position: "relative" }}>
             <button onClick={() => setShowDownload(false)} style={{ position: "absolute", top: 16, right: 20, background: "none", border: "none", fontSize: 20, cursor: "pointer", color: "#AAA" }}>✕</button>
-            <img src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 52, marginBottom: 10 }} />
+            <img loading="eager" src="./logo-agricertif.svg" alt="AgriCertif" style={{ height: 52, marginBottom: 10 }} />
             <div style={{ fontSize: 11, color: "#AAA", fontWeight: 600, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 20 }}>par AgriCorner</div>
             <h2 style={{ fontSize: 26, fontWeight: 900, color: "#0F3D0F", letterSpacing: -0.8, marginBottom: 10, lineHeight: 1.15 }}>Télécharger l'application</h2>
             <p style={{ fontSize: 15, color: "#777", lineHeight: 1.65, marginBottom: 36 }}>Certifiez et vendez votre matériel agricole directement depuis votre téléphone.</p>
