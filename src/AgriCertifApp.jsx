@@ -70,12 +70,17 @@ const COLORS = {
 export default function AgriCertifApp() {
   const [view, setView] = useState("home"); // home | estimate | certify | inspection | tour
 
+  const navigateTo = (v) => {
+    setView(v);
+    window.scrollTo({ top: 0, behavior: "instant" });
+  };
+
   return (
     <div className="min-h-screen" style={{ backgroundColor: COLORS.cream, fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif" }}>
-      {view !== "home" && view !== "certify" && <Header view={view} onHome={() => setView("home")} />}
-      {view === "home"       && <HomeScreen onSelect={setView} />}
-      {view === "estimate"   && <EstimateWizard onCertify={() => setView("certify")} onHome={() => setView("home")} />}
-      {view === "certify"    && <CertifyScreen onSelect={setView} />}
+      {view !== "home" && view !== "certify" && <Header view={view} onHome={() => navigateTo("home")} />}
+      {view === "home"       && <HomeScreen onSelect={navigateTo} />}
+      {view === "estimate"   && <EstimateWizard onCertify={() => navigateTo("certify")} onHome={() => navigateTo("home")} />}
+      {view === "certify"    && <CertifyScreen onSelect={navigateTo} />}
       {view === "inspection" && <Tool2Inspection />}
       {view === "tour"       && <Tool1Placeholder />}
       {view !== "home" && <Footer />}
