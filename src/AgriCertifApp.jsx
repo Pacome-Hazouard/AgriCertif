@@ -431,7 +431,7 @@ function HomeScreen({ onSelect }) {
         </h1>
 
         <p className="hero-fade-4" style={{ fontSize: 17, color: COLORS.muted, maxWidth: 560, margin: "0 auto 48px", lineHeight: 1.7, fontWeight: 400, opacity: 0.8 }}>
-          Vos commerciaux connaissent chaque matériel mieux que quiconque. AgriCertif transforme ce savoir-faire en une annonce certifiée qui inspire confiance à l'acheteur — avant même le premier contact.
+          Vos commerciaux connaissent chaque matériel mieux que quiconque. AgriCertif transforme ce savoir-faire en une annonce certifiée qui inspire confiance à l'acheteur, avant même le premier contact.
         </p>
 
         <div className="hero-fade-4" style={{ display: "flex", justifyContent: "center", gap: 14, flexWrap: "wrap" }}>
@@ -592,13 +592,13 @@ function HomeScreen({ onSelect }) {
               Une annonce premium<br />sur chaque matériel du parc.
             </h2>
             <p style={{ fontSize: 17, color: COLORS.muted, lineHeight: 1.7, maxWidth: 440, marginBottom: 28 }}>
-              Depuis leur téléphone, vos commerciaux structurent en 10 minutes tout ce qu'ils savent sur le matériel. Le badge AgriCertif transforme cette expertise en une source de confiance visible par chaque acheteur — avant même qu'il ne pose la première question.
+              Depuis leur téléphone, vos commerciaux structurent en 10 minutes tout ce qu'ils savent sur le matériel. Le badge AgriCertif transforme cette expertise en une source de confiance visible par chaque acheteur, avant même qu'il ne pose la première question.
             </p>
 
             {/* Bénéfices avec icônes Lucide */}
             <div style={{ display: "flex", flexDirection: "column", gap: 16, marginBottom: 28 }}>
               {[
-                { icon: <ShieldCheck size={17} strokeWidth={2} />, title: "Une source de confiance pour l'acheteur", sub: "Le badge AgriCertif ne certifie pas qu'une fiche — il certifie votre sérieux. L'acheteur sait à qui il a affaire avant même de vous appeler." },
+                { icon: <ShieldCheck size={17} strokeWidth={2} />, title: "Une source de confiance pour l'acheteur", sub: "Le badge AgriCertif ne certifie pas qu'une fiche : il certifie votre sérieux. L'acheteur sait à qui il a affaire avant même de vous appeler." },
                 { icon: <PhoneOff size={17} strokeWidth={2} />, title: "Des contacts qualifiés, pas des curieux", sub: "L'acheteur a tout pour décider avant d'appeler. Il contacte pour conclure. Vos commerciaux traitent des prospects prêts à avancer." },
                 { icon: <TrendingUp size={17} strokeWidth={2} />, title: "Diffusion automatique sur AgriCorner", sub: "Votre parc entier visible sur le premier réseau européen de matériel agricole d'occasion certifié." },
               ].map(({ icon, title, sub }) => (
