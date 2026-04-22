@@ -1708,7 +1708,7 @@ function CertifyScreen({ onSelect }) {
             <div style={{ background: "#EEF5E6", borderRadius: 18, padding: 5, display: "inline-flex", gap: 4 }}>
               {[
                 { key: "visite",     label: "① Visite virtuelle 360°" },
-                { key: "inspection", label: "② Bilan mécanique" },
+                { key: "inspection", label: "② Inspection Technique" },
               ].map(({ key, label }) => (
                 <button
                   key={key}
