@@ -861,12 +861,12 @@ function HomeScreen({ onSelect }) {
                       <div style={{ width: 26, height: 26, borderRadius: "50%", border: "1.5px solid rgba(255,255,255,0.25)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                         <Camera size={11} color="rgba(255,255,255,0.6)" />
                       </div>
-                      <div style={{ width: 26, height: 26, borderRadius: "50%", border: "1.5px solid rgba(255,255,255,0.25)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                        <Globe size={11} color="rgba(255,255,255,0.6)" />
-                      </div>
-                      {/* Bouton REC — à DROITE */}
+                      {/* Bouton REC — AU CENTRE */}
                       <div style={{ width: 40, height: 40, borderRadius: "50%", border: "3px solid #FF4444", display: "flex", alignItems: "center", justifyContent: "center" }}>
                         <div style={{ width: 28, height: 28, borderRadius: "50%", background: "#FF4444" }} />
+                      </div>
+                      <div style={{ width: 26, height: 26, borderRadius: "50%", border: "1.5px solid rgba(255,255,255,0.25)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                        <Globe size={11} color="rgba(255,255,255,0.6)" />
                       </div>
                     </div>
                   </div>
