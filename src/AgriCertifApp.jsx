@@ -416,7 +416,7 @@ function HomeScreen({ onSelect }) {
         <div className="hero-fade-2" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 16, marginBottom: 26 }}>
           <div style={{ width: 40, height: 1, background: COLORS.primaryLight, opacity: 0.5 }} />
           <span style={{ fontSize: 13, fontWeight: 600, letterSpacing: 2, textTransform: "uppercase", color: COLORS.primary, opacity: 0.8 }}>
-            L'outil pensé pour les pros du matériel agricole
+            Pour les concessions agricoles
           </span>
           <div style={{ width: 40, height: 1, background: COLORS.primaryLight, opacity: 0.5 }} />
         </div>
