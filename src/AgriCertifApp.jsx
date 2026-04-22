@@ -1059,7 +1059,7 @@ function HomeScreen({ onSelect }) {
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2.5, textTransform: "uppercase", color: COLORS.primary, marginBottom: 16 }}>
               Pourquoi les meilleures concessions choisissent AgriCertif
             </div>
-            <h2 style={{ fontSize: "clamp(30px, 3.5vw, 48px)", fontWeight: 800, color: COLORS.primaryDark, letterSpacing: -1.2, marginBottom: 70 }}>
+            <h2 style={{ fontSize: "clamp(30px, 3.5vw, 48px)", fontWeight: 800, color: COLORS.primaryDark, letterSpacing: -1.2, lineHeight: 1.1, marginBottom: 70 }}>
               Votre expertise visible.<br />La confiance de l'acheteur acquise.
             </h2>
           </RevealBlock>
