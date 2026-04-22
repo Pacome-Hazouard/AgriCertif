@@ -1654,7 +1654,7 @@ function CertifyScreen({ onSelect }) {
 
   const INSPECTION_POINTS = [
     { num: "01", title: "Informations techniques", desc: "Modèle, année, heures : le formulaire se pré-remplit depuis notre base de données." },
-    { num: "02", title: "État de chaque organe", desc: "Moteur, transmission, hydraulique, pneus : avec des photos guides pour chaque point." },
+    { num: "02", title: "Contrôle point par point", desc: "Moteur, transmission, hydraulique, pneus : avec des photos guides pour chaque point." },
     { num: "03", title: "Photos & commentaires", desc: "Ajoutez vos propres clichés et observations pour compléter le rapport." },
     { num: "04", title: "Rapport généré automatiquement", desc: "Un rapport standardisé est produit, prêt à être validé par notre expert terrain." },
   ];
@@ -1702,7 +1702,7 @@ function CertifyScreen({ onSelect }) {
             <div style={{ background: "#EEF5E6", borderRadius: 18, padding: 5, display: "inline-flex", gap: 4 }}>
               {[
                 { key: "visite",     label: "① Visite virtuelle 360°" },
-                { key: "inspection", label: "② Inspection technique" },
+                { key: "inspection", label: "② Bilan mécanique" },
               ].map(({ key, label }) => (
                 <button
                   key={key}
