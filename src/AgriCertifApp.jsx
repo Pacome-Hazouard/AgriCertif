@@ -431,7 +431,7 @@ function HomeScreen({ onSelect }) {
         </h1>
 
         <p className="hero-fade-4" style={{ fontSize: 17, color: COLORS.muted, maxWidth: 560, margin: "0 auto 48px", lineHeight: 1.7, fontWeight: 400, opacity: 0.8 }}>
-          AgriCertif guide chaque commercial étape par étape : visite du matériel, valorisation des données, annonce premium publiée automatiquement. Moins de temps sur les fiches, plus de temps pour vendre.
+          Vos commerciaux connaissent chaque matériel mieux que quiconque. AgriCertif transforme ce savoir-faire en une annonce certifiée qui inspire confiance à l'acheteur — avant même le premier contact.
         </p>
 
         <div className="hero-fade-4" style={{ display: "flex", justifyContent: "center", gap: 14, flexWrap: "wrap" }}>
@@ -592,14 +592,14 @@ function HomeScreen({ onSelect }) {
               Une annonce premium<br />sur chaque matériel du parc.
             </h2>
             <p style={{ fontSize: 17, color: COLORS.muted, lineHeight: 1.7, maxWidth: 440, marginBottom: 28 }}>
-              Depuis leur téléphone, vos commerciaux réalisent la visite guidée et l'inspection structurée en moins de 10 minutes. Dès que le dossier est complet et répond aux critères, le badge AgriCertif est attribué automatiquement et l'annonce publiée sur AgriCorner.
+              Depuis leur téléphone, vos commerciaux structurent en 10 minutes tout ce qu'ils savent sur le matériel. Le badge AgriCertif transforme cette expertise en une source de confiance visible par chaque acheteur — avant même qu'il ne pose la première question.
             </p>
 
             {/* Bénéfices avec icônes Lucide */}
             <div style={{ display: "flex", flexDirection: "column", gap: 16, marginBottom: 28 }}>
               {[
-                { icon: <PhoneOff size={17} strokeWidth={2} />, title: "Fini les appels sans valeur", sub: "L'acheteur a tout vu avant d'appeler. Il contacte pour conclure. Plus besoin de répondre aux mêmes questions basiques." },
-                { icon: <Users size={17} strokeWidth={2} />, title: "Vos commerciaux se concentrent sur la vente", sub: "Un dossier complet filtre les curieux. Votre équipe traite uniquement des prospects qualifiés, prêts à avancer." },
+                { icon: <ShieldCheck size={17} strokeWidth={2} />, title: "Une source de confiance pour l'acheteur", sub: "Le badge AgriCertif ne certifie pas qu'une fiche — il certifie votre sérieux. L'acheteur sait à qui il a affaire avant même de vous appeler." },
+                { icon: <PhoneOff size={17} strokeWidth={2} />, title: "Des contacts qualifiés, pas des curieux", sub: "L'acheteur a tout pour décider avant d'appeler. Il contacte pour conclure. Vos commerciaux traitent des prospects prêts à avancer." },
                 { icon: <TrendingUp size={17} strokeWidth={2} />, title: "Diffusion automatique sur AgriCorner", sub: "Votre parc entier visible sur le premier réseau européen de matériel agricole d'occasion certifié." },
               ].map(({ icon, title, sub }) => (
                 <div key={title} style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
@@ -1060,7 +1060,7 @@ function HomeScreen({ onSelect }) {
               Pourquoi les meilleures concessions choisissent AgriCertif
             </div>
             <h2 style={{ fontSize: "clamp(30px, 3.5vw, 48px)", fontWeight: 800, color: COLORS.primaryDark, letterSpacing: -1.2, marginBottom: 70 }}>
-              Standardisez l'excellence de<br />toute votre équipe commerciale.
+              Votre expertise visible.<br />La confiance de l'acheteur acquise.
             </h2>
           </RevealBlock>
 
@@ -1069,12 +1069,12 @@ function HomeScreen({ onSelect }) {
               {
                 icon: <ShieldCheck size={28} strokeWidth={1.5} />,
                 label: "Un standard de qualité pour toute l'équipe",
-                desc: "Chaque commercial dispose du même outil, des mêmes guides, du même niveau d'information. Le résultat est une annonce premium à chaque fois, quelle que soit l'expérience.",
+                desc: "Chaque commercial dispose du même outil et des mêmes guides. Peu importe l'expérience : chaque matériel est présenté avec le même niveau de sérieux, le même niveau de preuve.",
               },
               {
                 icon: <Sparkles size={28} strokeWidth={1.5} />,
-                label: "Rotation stock accélérée",
-                desc: "Des dossiers complets et certifiés réduisent le cycle de vente. Moins de négociations, plus de signatures rapides.",
+                label: "Moins de négociation, plus de signatures",
+                desc: "Un acheteur qui a confiance négocie moins. Un dossier certifié justifie le prix là où une simple annonce laisse le doute s'installer.",
               },
               {
                 icon: <Globe size={28} strokeWidth={1.5} />,
